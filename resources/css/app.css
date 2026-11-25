@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    [x-cloak] {
+        display: none !important;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: #f4f6fb;
+        color: #1e293b;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* Consistent crisp form controls across all modules */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="date"],
+    input[type="url"],
+    select,
+    textarea {
+        @apply transition duration-150 ease-in-out;
+    }
+
+    /* Subtle refined scrollbars for wide gradebook tables */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+    }
+}
+
+@layer components {
+    .school-card {
+        @apply bg-white rounded-2xl border border-slate-200/80 shadow-sm shadow-slate-200/40;
+    }
+
+    .school-btn-primary {
+        @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-school-600 hover:bg-school-700 text-white text-sm font-semibold shadow-sm shadow-school-600/20 transition;
+    }
+
+    .school-btn-gold {
+        @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-bold shadow-sm shadow-amber-500/20 transition;
+    }
+}
